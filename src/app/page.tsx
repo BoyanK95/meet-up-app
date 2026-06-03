@@ -3,6 +3,7 @@ import Link from "next/link";
 import { LatestPost } from "@/app/_components/post";
 import { auth } from "@/server/auth";
 import { api, HydrateClient } from "@/trpc/server";
+import { Button } from "@/components/ui/button";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -58,6 +59,7 @@ export default async function Home() {
               >
                 {session ? "Sign out" : "Sign in"}
               </Link>
+              <Button>Test</Button>
             </div>
           </div>
 
